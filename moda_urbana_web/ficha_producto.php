@@ -53,7 +53,7 @@ $variantes = $stmt_variantes->fetchAll(PDO::FETCH_ASSOC);
                 const params = `producto_id=${productoId}&talla=${talla}&color=${color}&precio=${precio}&nombre=${nombre}`;
                 xhr.send(params);
             } else {
-                alert(response.message); // Mostrar mensaje de error si no hay sesión activa
+                alert(response.message);
             }
         };
         xhrSesion.send();
@@ -127,7 +127,6 @@ include 'header.php';
         selectTalla.addEventListener('change', actualizarPrecio);
         selectColor.addEventListener('change', actualizarPrecio);
 
-        // Inicializar el precio
         actualizarPrecio();
     </script>
 </body>

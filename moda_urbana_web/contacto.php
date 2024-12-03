@@ -54,13 +54,13 @@ include 'header.php';
         <label for="nombre">Nombre:</label>
         <input type="text" id="nombre" name="nombre" required>
 
-        <label for="email">Email:</label>
+        <label class="margin-top-2"  for="email">Email:</label>
         <input type="email" id="email" name="email" required>
 
-        <label for="mensaje">Mensaje:</label>
+        <label class="margin-top-2"  for="mensaje">Mensaje:</label>
         <textarea id="mensaje" name="mensaje" required></textarea>
 
-        <button type="submit">Enviar</button>
+        <button class="margin-top-2" type="submit">Enviar</button>
     </form>
 
     </div>

@@ -81,10 +81,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <table class="tabla-fin-compra">
                     <thead class="titulos-fin-compra">
                         <tr>
-                            <th>Producto</th>
-                            <th>Precio</th>
-                            <th>Cantidad</th>
-                            <th>Subtotal</th>
+                            <th >Producto</th>
+                            <th class="centrar">Precio</th>
+                            <th class="centrar">Cantidad</th>
+                            <th class="centrar">Subtotal</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -93,10 +93,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             $total += $subtotal;
                         ?>
                             <tr>
-                                <td><?= htmlspecialchars($item['nombre']); ?></td>
-                                <td>$<?= number_format($item['precio'], 2); ?></td>
-                                <td><?= $item['cantidad']; ?></td>
-                                <td>$<?= number_format($subtotal, 2); ?></td>
+                                <td ><?= htmlspecialchars($item['nombre']); ?></td>
+                                <td class="centrar">$<?= number_format($item['precio'], 2); ?></td>
+                                <td class="centrar"><?= $item['cantidad']; ?></td>
+                                <td class="centrar">$<?= number_format($subtotal, 2); ?></td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>

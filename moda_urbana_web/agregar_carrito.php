@@ -4,7 +4,7 @@ include 'db.php';
 
 header('Content-Type: application/json');
 
-// Depuración para verificar si la sesión de usuario está presente
+// verificar si la sesión de usuario está presente
 if (!isset($_SESSION['usuario'])) {
     echo json_encode([
         "success" => false,

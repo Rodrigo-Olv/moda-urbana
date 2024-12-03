@@ -2,9 +2,6 @@
     --negro: #202020;
     --azul-oscuro: #26355D;
     --gris-oscuro: #333333;
-    --rosa: #AF47D2;
-    --naranja: #FF8F00;
-    --amarillo: #FFDB00;
 
     --fuente-encabezados: 'Urbanist', sans-serif;
     --fuente-texto: 'Montserrat', sans-serif;
@@ -27,13 +24,16 @@ h1{
     font-size: 50px;
     padding-top: 10px;
 }
-p{
+p, td, a{
     font-family: var(--fuente-texto);
     font-size: 18px;
     color: var(--negro);
 }
 button{
     background-color: var(--gris-oscuro);
+}
+.centrar{
+    text-align: center;
 }
 .footer-contenido a, .footer-contenido h3, .footer-contenido p, .footer-derechos p{
     color: white;
@@ -48,10 +48,12 @@ button{
     box-sizing: border-box;
 }
 html, body{
-    height: 100%;
     margin: 0;
     display: flex;
     flex-direction: column;
+}
+html{
+    height: 100%;
 }
 /* Estilo para el body */
 body {
@@ -69,8 +71,10 @@ footer{
     margin: 0;
     display: flex;
     flex-direction: column;
+    min-height: 100%;
 }
 .contenido{
+    min-height: 100%;
     flex: 1;
 }
 .fondo-fijo {
@@ -79,10 +83,10 @@ footer{
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, transparent, var(--negro));
+    background: linear-gradient(to bottom, transparent, var(--azul-oscuro));
     background-size: cover;
     background-repeat: no-repeat;
-    z-index: -1; /* Para que no tape el contenido */
+    z-index: -1; 
   }
 .div-img-home{
     margin: 0 auto;
@@ -142,8 +146,14 @@ a:hover {
     font-size: 18px;
     font-weight: bold;
 }
+.texto-nav:hover{
+    color: var(--azul-oscuro);
+}
 .no_margin{
     margin: 0;
+}
+.margin-top-2{
+    margin-top: 2%;
 }
 .navegacion{
     display: flex;
@@ -188,23 +198,21 @@ details.texto-nav[open] ul {
     gap: 2px;
 }
 
-/* Alineación vertical de los elementos */
 details.texto-nav ul li {
     margin: 0;
     padding: 10px;
     background-color: #f4f4f4;
 }
 
-/* Estilos para los enlaces */
 details.texto-nav ul li a {
-    color: #242424;
+    color: var(--negro);
     text-decoration: none;
     cursor: pointer;
 }
 
 details.texto-nav ul li a:hover {
     text-decoration: none;
-    color: #4f4f4f;
+    color: var(--azul-oscuro);
 }
 details.texto-nav ul li:hover{
     background-color: #d7d7d7;
@@ -212,11 +220,11 @@ details.texto-nav ul li:hover{
 
 
 /* Estilo para formularios */
-form {
-    display: flex; /* Diseño flexible */
-    flex-wrap: wrap; /* Permitir el ajuste de líneas */
-    gap: 10px; /* Espacio entre elementos del formulario */
-    margin-left: 3%; /* Espaciado vertical */
+.formulario-filtros {
+    display: flex; 
+    flex-wrap: wrap;
+    gap: 10px; 
+    margin-left: 3%; 
     margin-top: 2%;
     margin-right: 3%;
     margin-bottom: 2%;
@@ -241,7 +249,6 @@ form button {
     font-size: 18px; 
 }
 
-/* Estilo para el botón */
 form button {
     background-color: var(--gris-oscuro); 
     color: white; 
@@ -255,27 +262,28 @@ form button:hover {
 summary:hover{
     cursor:pointer;
 }
+
 /* Estilo para el catálogo de productos */
 .h2-categoria{
     margin: 2% 26%
 }
 .catalogo {
-    display: grid; /* Diseño en cuadrícula */
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Columnas automáticas */
-    gap: 10px; /* Espacio entre productos */
-    margin: 2% 26%; /* Espaciado alrededor del catálogo */
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+    gap: 10px; 
+    margin: 2% 26%; 
 }
 
 /* Estilo para cada ficha de producto */
 .producto-ficha {
     width: 90%;
-    border: 1px solid #ccc; /* Borde gris claro */
-    border-radius: 10px; /* Bordes redondeados */
-    padding: 10px; /* Espaciado interno */
+    border: 1px solid #ccc; 
+    border-radius: 10px; 
+    padding: 10px; 
     padding-top: 20px;
-    text-align: center; /* Centrar texto */
-    transition: transform 0.2s; /* Transición al escalar */
-    overflow: hidden; /* Ocultar contenido que se desborda */
+    text-align: center; 
+    transition: transform 0.2s; 
+    overflow: hidden; 
     margin-bottom: 10px;
     background-color: #f6f6f6;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
@@ -293,9 +301,9 @@ summary:hover{
 
 /* Estilo para la imagen del producto */
 .producto-imagen {
-    width: 80%; /* Ancho máximo */
-    height: 350px; /* Altura fija para todas las imágenes */
-    object-fit: cover; /* Ajustar la imagen para cubrir el área sin deformarse */
+    width: 80%; 
+    height: 350px; 
+    object-fit: cover; 
     border-radius: 10px;
 }
 
@@ -370,9 +378,9 @@ summary:hover{
 /*Estilos para carrito.php*/
 
 .fondo-carrito{
-    margin:3% 0%;
+    margin:4% 0%;
     display: grid;
-    padding: 2% 6% 5% 4%;
+    padding: 2% 6% 5% 6%;
     background-color: #eeeeee;
     color: var(--negro);
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
@@ -449,6 +457,10 @@ summary:hover{
     font-size: 16px;
     max-width: 1500px;
     padding-top: 10px;
+}
+.tabla-fin-compra th{
+    font-size: 28px;
+    font-family: var(--fuente-encabezados);
 }
 .titulos-fin-compra{
     font-size: 20px;
@@ -558,16 +570,16 @@ footer {
   }
   
   /* Contenedor de las imágenes */
-  .slides {
+.slides {
     display: flex;
     transition: transform 1s ease-in-out; /* Transición suave */
-  }
+}
   
   /* Estilo de las imágenes */
-  .slides img {
+.slides img {
     width: 100vw;
     height: auto;
-  }
+}
 
 /*estilo para login.php */
 
@@ -579,6 +591,100 @@ footer {
     justify-content: left;
 }
 
-#volver{
-    margin-left: 3%;
+#registrar:hover{
+    cursor: pointer;
+    background-color: var(--azul-oscuro);
+    color: white;
+}
+/*estilo para usuario.php y editar_usuario.php*/
+.contenido-usuario{
+    row-gap: 0px;
+    margin:4% 0%;
+    padding: 2% 6% 4% 6%;
+    background-color: #eeeeee;
+    color: var(--negro);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+.user-div{
+    height: 11em;
+}
+.user-div h2, .user-div h1{
+    padding-bottom: 0.4em;
+}
+.user-div-enlaces{
+    display: flex;
+    gap: 20px;
+}
+
+.formulario-edit-user{
+    padding-top: 3em;
+}
+
+.div-edit-user{
+    display: flex;
+    gap: 2em;
+    padding-bottom: 3em;
+}
+.div-edit-user-label{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+#guardar-cambios-user:hover{
+    cursor: pointer;
+    background-color: var(--azul-oscuro);
+    color: white;
+}
+
+.boton-volver-perfil {
+    background-color: var(--gris-oscuro); 
+    color: white; 
+    border: none; 
+    cursor: pointer; 
+    padding: 5px 20px;
+    border-radius: 8px;
+}
+
+.boton-volver-perfil:hover {
+    background-color: var(--azul-oscuro); 
+    color: white;
+}
+/*estilo para registro.php y editar_usuario.php*/
+
+.contenido-registro{
+    margin:4% 0%;
+    padding: 2% 6% 4% 6%;
+}
+.div-registro-user{
+    display: flex;
+    gap: 3em;
+    padding-bottom: 3em;
+}
+.div-registro-user-label{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    max-width: 20em;
+}
+
+.div-login-user-label{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 3em;
+}
+
+.div-login-user{
+    display: flex;
+    gap: 2em;
+    vertical-align: middle;
+}
+#iniciar:hover{
+    cursor: pointer;
+    background-color: var(--azul-oscuro);
+    color: white;
+}
+#registrate-aqui:hover{
+    cursor: pointer;
+    color: var(--azul-oscuro);
 }

@@ -43,10 +43,10 @@ include 'header.php';
                     ?>
                         <tr>
                             <td id="producto-carritotd" ><?= $item['nombre']; ?></td>
-                            <td><?= $item['talla']; ?></td>
-                            <td><?= $item['color']; ?></td>
-                            <td>$<?= number_format($item['precio'], 2); ?></td>
-                            <td>
+                            <td class="centrar"><?= $item['talla']; ?></td>
+                            <td class="centrar"><?= $item['color']; ?></td>
+                            <td class="centrar">$<?= number_format($item['precio'], 2); ?></td>
+                            <td class="centrar">
                                 <form action="server_modificar_carrito.php" method="POST" style="display:inline-block;">
                                     <input type="hidden" name="index" value="<?= $index; ?>">
                                     <button type="submit" name="accion" value="restar" class="sumayresta">-</button>
@@ -54,8 +54,8 @@ include 'header.php';
                                     <button type="submit" name="accion" value="sumar" class="sumayresta">+</button>
                                 </form>
                             </td>
-                            <td>$<?= number_format($subtotal, 2); ?></td>
-                            <td>
+                            <td class="centrar">$<?= number_format($subtotal, 2); ?></td>
+                            <td class="centrar">
                                 <form action="server_modificar_carrito.php" method="POST" style="display:inline-block;">
                                     <input type="hidden" name="index" value="<?= $index; ?>">
                                     <button type="submit" name="accion" value="eliminar">Eliminar</button>

@@ -1,5 +1,4 @@
 <?php
-// Ejemplo en server_login.php
 session_start();
 include 'db.php';
 
@@ -13,8 +12,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if ($user && password_verify($password, $user['password'])) {
-        $_SESSION['usuario'] = $user['email']; // Configura la sesión con el email o nombre del usuario.
-        header("Location: index.php"); // Redirige a la página principal después de iniciar sesión.
+        $_SESSION['usuario'] = $user['email']; 
+        header("Location: index.php");
         exit;
     } else {
         echo "Credenciales incorrectas";
@@ -36,18 +35,29 @@ include 'header.php';
 ?>
 </header>
 <body class="body-ajustado">
-    <div class="contenido">
-        <h1 class="inicio-sesion">Iniciar Sesión</h1>
+    <div class="contenido contenido-registro">
+        <h1 class="margin-bottom-3">Iniciar Sesión</h1>
         <form method="POST" action="" class="formulario-login">
-            <label for="email">Email:</label>
-            <input type="email" name="email" required>
-            <br>
-            <label for="password">Contraseña:</label>
-            <input type="password" name="password" required>
-            <br>
-            <button type="submit" value="Iniciar Sesión">Iniciar sesión</button>
+            <div class="div-login-user">
+                <div class="div-login-user-label">
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" required>
+                </div>
+
+                <div class="div-login-user-label">
+                    <label for="password">Contraseña:</label>
+                    <input type="password" name="password" required>
+                </div>
+                <div>
+                    <input type="submit" value="Iniciar Sesión" id="iniciar"></input>
+                </div>
+                
+
+            </div>
+
+
         </form>
-        <p class="inicio-sesion">¿No tienes una cuenta? <a href="registro.php">Regístrate aquí</a></p>
+        <p class="">¿No tienes una cuenta? <a href="registro.php" id="registrate-aqui">Regístrate aquí</a></p>
     </div>
 
     

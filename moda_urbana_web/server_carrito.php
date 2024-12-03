@@ -12,13 +12,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Crear el producto como un array
     $producto = [
-        
         'id' => $producto_id,
         'nombre' => $nombre,
         'talla' => $talla,
         'color' => $color,
         'precio' => $precio,
-        'cantidad' => 1 // Inicia con 1 unidad
+        'cantidad' => 1 
     ];
 
     // Comprobar si el carrito ya existe en la sesión

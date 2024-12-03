@@ -1,10 +1,9 @@
 <?php
 session_start();
-include 'db.php'; // Asegúrate de que este archivo incluya la conexión a la base de datos
+include 'db.php'; 
 
-// Verificar si el usuario ha iniciado sesión
+// Verificar si el usuario ha iniciado sesión y devolver ID
 if (isset($_SESSION['usuario'])) {
-    // Si la sesión está activa, devolvemos el ID del usuario
     echo json_encode([
         "success" => true,
         "usuario_id" => $_SESSION['usuario']

@@ -29,23 +29,34 @@ if (!$usuario) {
 <?php include 'header.php'; ?>
 </header>
 <body class="body-ajustado">
-    <div class="contenido">
-        <h1>Perfil de <?= htmlspecialchars($usuario['nombre']); ?></h1>
-        <p>Bienvenido/a, <?= htmlspecialchars($usuario['nombre']); ?>. Aquí puedes ver tu información de perfil.</p>
+    <div class="contenido contenido-usuario">
+        <div  class="user-div">
+            <h1 class="">Perfil de <?= htmlspecialchars($usuario['nombre']); ?></h1>
+            <p class="">Bienvenido/a, <?= htmlspecialchars($usuario['nombre']); ?>. Aquí puedes ver tu información de perfil.</p>
+        </div>
 
-        <h2>Datos personales</h2>
-        <p><strong>Nombre:</strong> <?= htmlspecialchars($usuario['nombre']); ?></p>
-        <p><strong>Email:</strong> <?= htmlspecialchars($usuario['email']); ?></p>
+        <div class="user-div">
+            <h2>Datos personales</h2>
+            <p><strong>Nombre:</strong> <?= htmlspecialchars($usuario['nombre']); ?></p>
+            <p><strong>Email:</strong> <?= htmlspecialchars($usuario['email']); ?></p>
+        </div>
 
-        <h2>Información de contacto</h2>
-        <p><strong>Dirección:</strong> <?= htmlspecialchars($usuario['direccion'] ?? "No especificada"); ?></p>
-        <p><strong>Teléfono:</strong> <?= htmlspecialchars($usuario['telefono'] ?? "No especificado"); ?></p>
+        <div class="user-div">
+            <h2>Información de contacto</h2>
+            <p><strong>Dirección:</strong> <?= htmlspecialchars($usuario['direccion'] ?? "No especificada"); ?></p>
+            <p><strong>Teléfono:</strong> <?= htmlspecialchars($usuario['telefono'] ?? "No especificado"); ?></p>
+        </div>
 
-        <h2>Método de pago</h2>
-        <p><strong>Número de Tarjeta:</strong> <?= $usuario['Ntarjeta'] ? "**** **** **** " . substr($usuario['Ntarjeta'], -4) : "No especificado"; ?></p>
+        <div class="user-div">
+            <h2>Método de pago</h2>
+            <p><strong>Número de Tarjeta:</strong> <?= $usuario['Ntarjeta'] ? "**** **** **** " . substr($usuario['Ntarjeta'], -4) : "No especificado"; ?></p>
+        </div>
 
-        <a href="editar_usuario.php">Editar perfil</a>
-        <a href="logout.php">Cerrar sesión</a>
+        <div class="user-div-enlaces">
+            <a href="editar_usuario.php">Editar perfil</a>
+            <a href="logout.php">Cerrar sesión</a>
+        </div>
+
     </div>
 </body>
 <footer>

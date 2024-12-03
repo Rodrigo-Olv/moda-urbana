@@ -1,8 +1,8 @@
 <?php
-include 'db.php'; // Conexión a la base de datos
-require_once 'filtros.php'; // Asegúrate de que este archivo esté correctamente configurado para manejar filtros
+include 'db.php'; 
+require_once 'filtros.php'; 
 session_start();
-// Variables para almacenar los filtros y parámetros
+
 $condiciones = [];
 $parametros = [];
 
@@ -27,14 +27,12 @@ if (!empty($_GET['genero'])) {
     $parametros['genero'] = $_GET['genero'];
 }
 
-// ** NUEVO: Agregar la búsqueda manual **
 $busqueda = isset($_GET['busqueda']) ? $_GET['busqueda'] : '';
 if (!empty($busqueda)) {
-    $condiciones[] = "productos.nombre LIKE :busqueda"; // Usamos LIKE para permitir búsqueda parcial
-    $parametros['busqueda'] = '%' . $busqueda . '%'; // Preparamos el parámetro con comodines
+    $condiciones[] = "productos.nombre LIKE :busqueda"; 
+    $parametros['busqueda'] = '%' . $busqueda . '%'; 
 }
 
-// Construir la consulta SQL, uniendo las tablas necesarias
 $sql = "SELECT productos.id, productos.nombre, productos.imagen_url, MIN(variantes_productos.precio) AS precio_min
         FROM productos
         JOIN variantes_productos ON productos.id = variantes_productos.producto_id
@@ -82,7 +80,7 @@ include 'header.php';
     </div>
     </div>
     
-    <form method="GET" action="index.php" class="form">
+    <form method="GET" action="index.php" class="formulario-filtros">
         <input type="text" name="busqueda" placeholder="Buscar producto" value="<?= isset($_GET['busqueda']) ? htmlspecialchars($_GET['busqueda']) : ''; ?>">
         <label for="genero">Género:</label>
         <select name="genero" id="genero">
@@ -125,21 +123,21 @@ include 'header.php';
                 <a href="ficha_producto.php?id=<?= $producto['id']; ?>">
                     <img src="<?= $producto['imagen_url']; ?>" alt="<?= $producto['nombre']; ?>" class="producto-imagen">
                     <h3><?= $producto['nombre']; ?></h3>
-                    <p>Desde €<?= number_format($producto['precio_min'], 2); ?></p>
+                    <p>Desde <?= number_format($producto['precio_min'], 2); ?>€</p>
                 </a>
             </div>
         <?php endforeach; ?>
     </div>
-    <script>
-        let index = 0; // Índice de la imagen actual
+    <script> //codigo para el funcionamiento del slider
+        let index = 0; 
         const slides = document.querySelector('.slides');
         const images = document.querySelectorAll('.slides img');
         const totalImages = images.length;
 
         function nextSlide() {
-        index = (index + 1) % totalImages; // Incrementa el índice y reinicia al llegar a la última imagen
-        const offset = -index * 100; // Calcula el desplazamiento
-        slides.style.transform = `translateX(${offset}vw)`; // Aplica el desplazamiento
+        index = (index + 1) % totalImages; 
+        const offset = -index * 100; 
+        slides.style.transform = `translateX(${offset}vw)`; 
         }
 
         // Cambio de imagen cada 5 segundos

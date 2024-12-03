@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 <div class="header">
     <a href="index.php" class="enlace-inicio"><img class="logo_header" src="imagenes/logo.png" alt=""><h1 class="moda-urbana" >MODA URBANA</h1></a>
     <div>
